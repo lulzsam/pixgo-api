@@ -5,15 +5,15 @@ Uma biblioteca simples e moderna para integração com pagamentos via Pix.
 ## 📦 Instalação
 
 ```bash
-npm install pixgo
+npm install pixgo-api
 # ou
-yarn add pixgo
+yarn add pixgo-api
 ```
 
 ## 🔒 Autenticação
 
 ```typescript
-import { PixGo } from "pixgo"
+import { PixGo } from "pixgo-api"
 
 const pixgo = new PixGo({ apiKey: "SUA_API_KEY_AQUI" })
 ```
