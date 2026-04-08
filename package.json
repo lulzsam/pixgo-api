@@ -1,0 +1,31 @@
+{
+  "name": "pixgo",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "pixgo",
+    "api-pix",
+    "pix"
+  ],
+  "author": "b7k3",
+  "license": "ISC",
+  "description": "Biblioteca simples para integrar com a API da PixGo",
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "typescript": "^5.9.3"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "axios": "^1.15.0"
+  }
+}
