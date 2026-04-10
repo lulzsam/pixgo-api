@@ -10,6 +10,7 @@ interface PixCreateParams {
   customer_address?: string;
   external_id?: string;
   description?: string;
+  webhook_url?: string;
 }
 
 interface PixStatusParams {
@@ -25,14 +26,14 @@ export class Pix {
   }
 
   public async create(params: PixCreateParams): Promise<PixCreateResponse> {
-    const { amount, customer_name, customer_cpf, customer_email, customer_phone, customer_address, external_id, description } = params;
+    const { amount, customer_name, customer_cpf, customer_email, customer_phone, customer_address, external_id, description, webhook_url } = params;
 
     if (!amount) {
       throw new Error("Amount is required");
     }
 
     try {
-      const response = await axios.post(`${this.config.apiBase}/payment/create`, { amount, customer_name, customer_cpf, customer_email, customer_phone, customer_address, external_id, description }, {
+      const response = await axios.post(`${this.config.apiBase}/payment/create`, { amount, customer_name, customer_cpf, customer_email, customer_phone, customer_address, external_id, description, webhook_url }, {
         headers: {
           "Content-Type": "application/json",
           "X-API-Key": `${this.config.apiKey}`,
