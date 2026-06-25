@@ -1,6 +1,6 @@
 {
-  "name": "pixgo",
-  "version": "1.0.0",
+  "name": "pixgo-api",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"

@@ -3,11 +3,11 @@ import axios from "axios";
 
 interface PixCreateParams {
   amount: number;
-  customer_name?: string;
-  customer_cpf?: string;
-  customer_email?: string;
-  customer_phone?: string;
-  customer_address?: string;
+  receiver_name?: string;
+  receiver_cpf: string;
+  receiver_email?: string;
+  receiver_phone?: string;
+  receiver_address?: string;
   external_id?: string;
   description?: string;
   webhook_url?: string;
@@ -26,14 +26,18 @@ export class Pix {
   }
 
   public async create(params: PixCreateParams): Promise<PixCreateResponse> {
-    const { amount, customer_name, customer_cpf, customer_email, customer_phone, customer_address, external_id, description, webhook_url } = params;
+    const { amount, receiver_name, receiver_cpf , receiver_email, receiver_phone, receiver_address, external_id, description, webhook_url } = params;
 
     if (!amount) {
       throw new Error("Amount is required");
     }
 
+    if (!receiver_cpf) {
+      throw new Error("Receiver CPF is required");
+    }
+
     try {
-      const response = await axios.post(`${this.config.apiBase}/payment/create`, { amount, customer_name, customer_cpf, customer_email, customer_phone, customer_address, external_id, description, webhook_url }, {
+      const response = await axios.post(`${this.config.apiBase}/payment/create`, { amount, receiver_name, receiver_cpf , receiver_email, receiver_phone, receiver_address, external_id, description, webhook_url }, {
         headers: {
           "Content-Type": "application/json",
           "X-API-Key": `${this.config.apiKey}`,

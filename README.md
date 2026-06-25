@@ -24,11 +24,11 @@ const pixgo = new PixGo({ apiKey: "SUA_API_KEY_AQUI" })
 pixgo.pix.create({ 
   amount: 10,
   webhook_url: "https://seusite.com/webhook/pixgo", // opcional
-  customer_address: "Rua das Flores, 123, São Paulo, SP, 01234-567", // opcional
-  customer_cpf: "12345678901", // opcional
-  customer_email: "cliente@example.com", // opcional
-  customer_name: "João Silva", // opcional
-  customer_phone: "11999999999", // opcional
+  receiver_address: "Rua das Flores, 123, São Paulo, SP, 01234-567", // opcional
+  receiver_cpf: "12345678901", // obrigatorio
+  receiver_email: "cliente@example.com", // opcional
+  receiver_name: "João Silva", // opcional
+  receiver_phone: "11999999999", // opcional
   description: "Pagamento de produto", // opcional
   external_id: "pedido_12345" // opcional
 })
